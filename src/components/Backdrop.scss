@@ -1,0 +1,14 @@
+.backdrop {
+    position: fixed;
+    left:  0;
+    bottom: 0;
+    height: 0;
+}
+
+.backdrop {
+    position: fixed;
+    left:  0;
+    bottom: 0;
+    width: calc(100% - 5rem);
+    background: #ccc;
+}

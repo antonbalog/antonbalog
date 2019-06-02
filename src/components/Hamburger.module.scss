@@ -1,0 +1,61 @@
+ .hamburger {
+    -webkit-animation: text-flicker-in-glow 4s linear both;
+    animation: text-flicker-in-glow 4s linear both;
+}
+
+button {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: none;
+    width: 250px;
+    background: transparent;
+    font-size: 4rem;
+    font-family: 'Bebas Neue';
+    color: #444;
+    cursor: pointer;
+    transition: color ease-in 0.3s;
+}
+
+button:hover {
+    color: #aaa;
+    transition: color ease-in 0.3s;
+    .line, .first, .second, .third {
+        background: #aaa;
+    }
+}
+
+.line {
+    width: 4rem;
+    height: 0.5rem;
+    background-color: #444;
+    margin: 1rem ;
+    transition: 0.4s;
+  }
+
+.first {
+    width: 4rem;
+    height: 0.5rem;
+    background-color: #444;
+    margin: 1rem ;
+    transition: 0.4s;
+    -webkit-transform: rotate(-45deg) translate(-1rem, 1rem);
+    transform: rotate(-45deg) translate(-1rem, 1rem);
+}
+  
+.second {
+    width: 4rem;
+    height: 0.5rem;
+    background-color: #444;
+    margin: 1rem ;
+    transition: 0.4s;opacity: 0;}
+
+.third {
+    width: 4rem;
+    height: 0.5rem;
+    background-color: #444;
+    margin: 1rem ;
+    transition: 0.4s;
+    -webkit-transform: rotate(45deg) translate(-1rem, -1rem);
+    transform: rotate(45deg) translate(-1.1rem, -1.1rem);
+}

@@ -1,0 +1,64 @@
+ @-webkit-keyframes color-change-5x {
+    0% {
+      background: #19dcea;
+    }
+    25% {
+      background: #b22cff;
+    }
+    50% {
+      background: #ea2222;
+    }
+    75% {
+      background: #f5be10;
+    }
+    100% {
+      background: #3bd80d;
+    }
+  }
+  @keyframes color-change-5x {
+    0% {
+      background: #19dcea;
+    }
+    25% {
+      background: #b22cff;
+    }
+    50% {
+      background: #ea2222;
+    }
+    75% {
+      background: #f5be10;
+    }
+    100% {
+      background: #3bd80d;
+    }
+  }
+  
+
+.home {
+    padding-top: 7.5rem;
+    width: calc(100% -2rem);
+    min-height: calc(95vh - 7.5rem);    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+    -webkit-animation: color-change-5x 8s linear infinite alternate both;
+        animation: color-change-5x 8s linear infinite alternate both;
+    p {
+        margin: 0;
+        padding: 2rem;
+        text-align: left;
+        font-family: 'Bebas Neue';
+        font-size: 5rem;
+        color: #fff;
+    }
+}
+
+// @media screen and (orientation: portrait) {
+@media screen and (max-width: 750px) {
+  .home {
+    p {
+      font-size: 4rem;
+    }
+  }
+}

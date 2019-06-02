@@ -1,0 +1,56 @@
+.contact {
+    padding-top: 7.5rem;
+    min-height: calc(95vh - 7.5rem);
+    display: flex;
+    flex-direction: column;
+    background: #444;
+}
+
+.mail {
+    flex: 1 auto;
+    height: 22.5vh;
+    background: #222;
+    color: #fff;
+    fill: #fff;
+    transition: 0.4s;
+}
+
+// .mail:hover {
+//     height: 25vh;
+//     background: #fff;
+//     color: #222;
+//     fill: #222;
+//     transition: 0.4s;
+// }
+
+.twitter {
+    flex: 1 auto;
+    height: 22.5vh;
+    background: #1da1f2;
+    color: #fff;
+    fill: #fff;
+    transition: 0.4s;
+}
+
+// .twitter:hover {
+//     height: 25vh;
+//     background: #fff;
+//     color: #1da1f2;
+//     fill: #1da1f2;
+// }
+
+.linkedin {
+    flex: 1 auto;
+    height: 22.5vh;
+    background: #0077B5;
+    color: #fff;
+    fill: #fff;
+    transition: 0.4s;
+}
+
+// .linkedin:hover {
+//     background: #0077B5;
+//     color: #fff;
+//     fill: #fff;
+//     transition: 0.4s;
+// }
