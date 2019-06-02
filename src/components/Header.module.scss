@@ -61,6 +61,7 @@ header {
 @media screen and (max-width: 750px) {
     header {
         // height: 100%;
+        align-items: center;
         flex-direction: column-reverse;
 
     }

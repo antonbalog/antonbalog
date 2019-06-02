@@ -15,7 +15,7 @@
         font-size: 2vw;
         color: #222;
         bottom: -10vh;
-        transition: bottom ease-in 0.5s;
+        transition: bottom ease-in 0.2s;
     }
     .designer {
         display:flex;
@@ -28,7 +28,7 @@
         p {
             // NIE REM
             bottom: 10vh;
-            transition: bottom ease-in 0.5s;
+            transition: bottom ease-in 0.2s;
         }
     }
     .developer {
@@ -41,7 +41,7 @@
         p {
             // NIE REM
             bottom: 10vh;
-            transition: bottom ease-in 0.5s;
+            transition: bottom ease-in 0.2s;
         }
     }
     .engineer {
@@ -54,7 +54,7 @@
         p {
             // NIE REM
             bottom: 10vh;
-            transition: bottom ease-in 0.5s;
+            transition: bottom ease-in 0.2s;
         }
     }
 }

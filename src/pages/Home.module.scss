@@ -32,11 +32,10 @@
       background: #3bd80d;
     }
   }
-  
 
 .home {
     padding-top: 7.5rem;
-    width: calc(100% -2rem);
+    width: 100%;
     min-height: calc(95vh - 7.5rem);    
     display: flex;
     justify-content: center;
@@ -49,7 +48,7 @@
         padding: 2rem;
         text-align: left;
         font-family: 'Bebas Neue';
-        font-size: 5rem;
+        font-size: 5vw;
         color: #fff;
     }
 }
@@ -58,7 +57,7 @@
 @media screen and (max-width: 750px) {
   .home {
     p {
-      font-size: 4rem;
+      font-size: 10vw;
     }
   }
 }

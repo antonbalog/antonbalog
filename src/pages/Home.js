@@ -7,11 +7,11 @@ const Home = () => {
     <div className={homeStyles.home}>
       <div>
         <p style={{'textAlign': 'left'}}>
-          My name is Anton Balog and I am IT Freelancer based in Bratislava.<br />
-          Need help? Contact Me!
+          Launched in 2019 as an it freelancer for creative entrepreneurs,
+          bloggers, and small biz rockstars from all around the world.
         </p>
         <p style={{'textAlign': 'center'}}>
-          Cheers!
+          Don't hesitate to say hello!
         </p>
       </div>
     </div>
