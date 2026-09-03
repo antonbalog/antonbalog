@@ -3,10 +3,10 @@ import React from 'react';
 import footerStyles from './Footer.module.scss';
 
 const Footer = () => {
-  return (
-    <footer className={footerStyles.footer}>
-        <p>Created by Anton Balog © 2019 </p>
-      {/* <div className={footerStyles.tooltip}>
+    return (
+        <footer className={footerStyles.footer}>
+            <p>© 2019–{new Date().getFullYear()} Anton Balog</p>
+            {/* <div className={footerStyles.tooltip}>
         Anton Balog
     <div className={footerStyles.right}>
         <img alt="There shoul be me!" src='https://pbs.twimg.com/profile_images/878240617519882240/bupKldgs_400x400.jpg' />
@@ -22,8 +22,8 @@ const Footer = () => {
     </div>
 </div> */}
 
-    </footer>
-  );
+        </footer>
+    );
 }
 
 export default Footer;
