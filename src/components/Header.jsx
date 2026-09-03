@@ -1,35 +1,70 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import Hamburger from './Hamburger';
-
 import headerStyles from './Header.module.scss';
 
-const Header = (props) => {
+const Header = ({
+  active,
+  activationHandler,
+  hoverHandler,
+  labelHandler,
+}) => {
   const navItemClass = ({ isActive }) =>
-    isActive ? `${headerStyles.navItem} ${headerStyles.active}` : headerStyles.navItem;
+    `${headerStyles.navItem} ${isActive ? headerStyles.active : ''}`.trim();
+
+  const resetLabel = () => hoverHandler(':)');
 
   return (
-    <header className={!props.active ? headerStyles.default : headerStyles.dark}>
-      <nav className={!props.active ? headerStyles.moveUp : headerStyles.moveDown}>
+    <header className={active ? headerStyles.dark : headerStyles.default}>
+      <nav className={active ? headerStyles.moveDown : headerStyles.moveUp}>
         <ul className={headerStyles.navList}>
-          <li onMouseEnter={props.hoverHandler.bind(this, 'WANNA GO BACK 2 HOME PAGE?')} onMouseLeave={props.hoverHandler.bind(this, ':)')}>
-            <NavLink onClick={props.activationHandler} end className={navItemClass} to='/'>HOME</NavLink>
+          <li
+            onMouseEnter={() => hoverHandler('HOME')}
+            onMouseLeave={resetLabel}
+          >
+            <NavLink
+              to="/"
+              end
+              className={navItemClass}
+              onClick={activationHandler}
+            >
+              HOME
+            </NavLink>
           </li>
-          {/* <li onMouseEnter={props.hoverHandler.bind(this, 'SOME IDEAS')} onMouseLeave={props.hoverHandler.bind(this, ':)')}>
-            <NavLink onClick={props.activationHandler} className={navItemClass} to='/blog'>BLOG</NavLink>
-          </li> */}
-          <li onMouseEnter={props.hoverHandler.bind(this, 'WHAT CAN I DO FOR YOU?')} onMouseLeave={props.hoverHandler.bind(this, ':)')}>
-            <NavLink onClick={props.activationHandler} className={navItemClass} to='/work'>WORK</NavLink>
+
+          <li
+            onMouseEnter={() => hoverHandler('SELECTED WORK')}
+            onMouseLeave={resetLabel}
+          >
+            <NavLink
+              to="/work"
+              className={navItemClass}
+              onClick={activationHandler}
+            >
+              WORK
+            </NavLink>
           </li>
-          <li onMouseEnter={props.hoverHandler.bind(this, `CONTACT ME IF YOU LIKE!`)} onMouseLeave={props.hoverHandler.bind(this, ':)')}>
-            <NavLink onClick={props.activationHandler} className={navItemClass} to='/contact'>CONTACT</NavLink>
+
+          <li
+            onMouseEnter={() => hoverHandler('LET’S TALK')}
+            onMouseLeave={resetLabel}
+          >
+            <NavLink
+              to="/contact"
+              className={navItemClass}
+              onClick={activationHandler}
+            >
+              CONTACT
+            </NavLink>
           </li>
         </ul>
       </nav>
-      <Hamburger clickHandler={props.activationHandler}>{props.labelHandler}</Hamburger>
+
+      <Hamburger clickHandler={activationHandler}>
+        {labelHandler}
+      </Hamburger>
     </header>
   );
-}   
+};
 
 export default Header;

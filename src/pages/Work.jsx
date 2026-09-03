@@ -14,7 +14,7 @@ const Work = () => {
           <p>Because React is cool stuff!</p>
         </div> */}
       <div className={workStyles.engineer}>
-        <h1>DEVOPS Consultant</h1>
+        <h1>DEVOPS Engineer</h1>
         {/* <p>To save time for the COOL stuff!</p> */}
       </div>
     </div>

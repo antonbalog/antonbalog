@@ -1,10 +1,10 @@
-import React, { useState }  from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // import Layout from './components/Layout';
 import Header from './components/Header'
 import SideDrawer from './components/SideDrawer';
-import Footer from './components/Footer'; 
+import Footer from './components/Footer';
 
 import Home from './pages/Home';
 import Blog from './pages/Blog';
@@ -37,7 +37,7 @@ const App = () => {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header 
+        <Header
           active={active}
           activationHandler={activation}
           labelHandler={label}

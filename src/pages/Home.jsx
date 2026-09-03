@@ -6,11 +6,11 @@ const Home = () => {
   return (
     <div className={homeStyles.home}>
       <div>
-        <p style={{ 'textAlign': 'left' }}>
-          I’m Anton, a software engineer building reliable applications and the systems that keep them running.
-        </p>
         <p style={{ 'textAlign': 'center' }}>
-          Want to talk? Get in touch.
+          I’m Anton, a software engineer building reliable applications and the systems that keep them running.*
+        </p>
+        <p style={{ 'textAlign': 'right' }}>
+          *Most of the time.
         </p>
       </div>
     </div>
