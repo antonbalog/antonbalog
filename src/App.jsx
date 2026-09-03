@@ -1,5 +1,5 @@
 import React, { useState }  from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // import Layout from './components/Layout';
 import Header from './components/Header'
@@ -43,10 +43,12 @@ const App = () => {
           labelHandler={label}
           hoverHandler={hovering}
         />
-        <Route path='/' component={Home} exact />
-        <Route path='/blog' component={Blog} />
-        <Route path='/work' component={Work} />
-        <Route path='/contact' component={Contact} />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/blog' element={<Blog />} />
+          <Route path='/work' element={<Work />} />
+          <Route path='/contact' element={<Contact />} />
+        </Routes>
         <SideDrawer active={active} hover={hover}>{hover}</SideDrawer>
         <Footer />
       </BrowserRouter>
