@@ -14,7 +14,7 @@ import './App.scss';
 
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [menuMessage, setMenuMessage] = useState(':)');
+  const [menuMessage, setMenuMessage] = useState('ANTON BALOG');
 
   const toggleMenu = () => {
     setMenuOpen((isOpen) => !isOpen);

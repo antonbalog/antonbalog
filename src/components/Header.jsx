@@ -34,7 +34,7 @@ const Header = ({
       : headerStyles.navItem;
 
   const resetMessage = () => {
-    hoverHandler(':)');
+    hoverHandler('ANTON BALOG');
   };
 
   return (
