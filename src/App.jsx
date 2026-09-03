@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-// import Layout from './components/Layout';
-import Header from './components/Header'
+import Header from './components/Header';
 import SideDrawer from './components/SideDrawer';
 import Footer from './components/Footer';
 
@@ -14,46 +13,45 @@ import Contact from './pages/Contact';
 import './App.scss';
 
 const App = () => {
-  const [active, activate] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuMessage, setMenuMessage] = useState(':)');
 
-  const activation = () => {
-    return activate(!active);
+  const toggleMenu = () => {
+    setMenuOpen((isOpen) => !isOpen);
   };
 
-  const [hover, hovered] = useState(':)');
-
-  const hovering = (hover) => {
-    return hovered(hover);
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setMenuMessage(':)');
   };
 
-  let label;
-
-  if (active) {
-    label = 'CLOSE';
-  } else {
-    label = 'MENU';
-  }
+  const menuLabel = menuOpen ? 'CLOSE' : 'MENU';
 
   return (
     <div className="App">
       <BrowserRouter>
         <Header
-          active={active}
-          activationHandler={activation}
-          labelHandler={label}
-          hoverHandler={hovering}
+          active={menuOpen}
+          activationHandler={toggleMenu}
+          hoverHandler={setMenuMessage}
+          labelHandler={menuLabel}
         />
+
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/blog' element={<Blog />} />
-          <Route path='/work' element={<Work />} />
-          <Route path='/contact' element={<Contact />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/work" element={<Work />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
-        <SideDrawer active={active} hover={hover}>{hover}</SideDrawer>
+
+        <SideDrawer active={menuOpen} hover={menuMessage}>
+          {menuMessage}
+        </SideDrawer>
+
         <Footer />
       </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
