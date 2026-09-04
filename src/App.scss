@@ -1,27 +1,19 @@
 @font-face {
   font-family: 'Bebas Neue';
+  src:
+    url('/fonts/woff2/BebasNeue-Regular.woff2') format('woff2'),
+    url('/fonts/woff/BebasNeue-Regular.woff') format('woff');
   font-style: normal;
   font-weight: 400;
-  src: url('./fonts/eot/BebasNeue-Regular.eot');
-  /* IE9 Compat Modes */
-  src: local('Bebas Neue'), local('BebasNeue'),
-    url('./fonts/eot/BebasNeue-Regular.eot') format('embedded-opentype'),
-    /* IE6-IE8 */
-    url('./fonts/woff2/BebasNeue-Regular.woff2') format('woff2'),
-    /* Super Modern Browsers */
-    url('./fonts/woff/BebasNeue-Regular.woff') format('woff'),
-    /* Modern Browsers */
-    url('./fonts/ttf/BebasNeue-Regular.ttf') format('truetype'),
-    /* Safari, Android, iOS */
-    /* url('../public/fonts/svg/BebasNeue-Regular.svg#OpenSans') format('svg'), Legacy iOS */
+  font-display: swap;
 }
+
 
 @font-face {
   font-family: 'D-DIN';
-  src: url('./fonts/eot/D-DIN.eot') format('embedded-opentype'),
-    url('./fonts/woff2/d-din/D-DIN.woff2') format('woff2'),
-    url('./fonts/woff/d-din/D-DIN.woff') format('woff'),
-    url('./fonts/ttf/d-din/D-DIN.ttf') format('truetype');
+  src:
+    url('/fonts/woff2/D-DIN.woff2') format('woff2'),
+    url('/fonts/woff/D-DIN.woff') format('woff');
   font-style: normal;
   font-weight: 400;
   font-display: swap;
