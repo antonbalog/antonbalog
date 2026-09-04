@@ -1,0 +1,38 @@
+.notFound {
+    box-sizing: border-box;
+    min-height: 95vh;
+    padding: 7.5rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: default;
+    color: #222;
+
+    h1 {
+        margin: 0;
+        font-family: 'Bebas Neue';
+        font-size: clamp(4rem, 10vw, 8rem);
+        line-height: 1;
+    }
+
+    p {
+        margin: 1rem 0 2rem;
+        font-family: 'D-DIN', Arial, Helvetica, sans-serif;
+        font-size: 1.25rem;
+    }
+}
+
+.link {
+    font-family: 'Bebas Neue';
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+    color: #222;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus-visible {
+        color: #555;
+    }
+}

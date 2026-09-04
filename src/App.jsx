@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import Blog from './pages/Blog';
 import Work from './pages/Work';
 import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
 
 import './App.scss';
 
@@ -18,11 +19,6 @@ const App = () => {
 
   const toggleMenu = () => {
     setMenuOpen((isOpen) => !isOpen);
-  };
-
-  const closeMenu = () => {
-    setMenuOpen(false);
-    setMenuMessage(':)');
   };
 
   const menuLabel = menuOpen ? 'CLOSE' : 'MENU';
@@ -42,6 +38,7 @@ const App = () => {
           <Route path="/blog" element={<Blog />} />
           <Route path="/work" element={<Work />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
 
         <SideDrawer active={menuOpen} hover={menuMessage}>
