@@ -14,8 +14,13 @@ const Work = () => {
           <p>Because React is cool stuff!</p>
         </div> */}
       <div className={workStyles.engineer}>
-        <h1>DEVOPS Engineer</h1>
-        {/* <p>To save time for the COOL stuff!</p> */}
+        <p>WHAT I DO?</p>
+        <h1>DEVOPS Consultant</h1>
+        <p>DevOps consultant with 13+ years of experience across banking and fintech,
+          telecommunications, and health insurance. Specialised in Kubernetes
+          platform, CI/CD modernisation, infrastructure as code, and DevSecOps.
+          Combines hands-on engineering with technical leadership and
+          developer enablement in complex, regulated enterprise environments.</p>
       </div>
     </div>
   );
