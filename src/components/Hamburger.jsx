@@ -1,17 +1,15 @@
-import React from 'react';
-
 import hamburgerStyles from './Hamburger.module.scss';
 
-const Hamburger = (props) => {
+const Hamburger = ({ clickHandler, children }) => {
   return (
     <div className={hamburgerStyles.hamburger}>
-      <button onClick={props.clickHandler}>
+      <button onClick={clickHandler}>
         <div className={hamburgerStyles.toggle}>
-            <div className={props.children === 'MENU' ? hamburgerStyles.line : hamburgerStyles.first}/>
-            <div className={props.children === 'MENU' ? hamburgerStyles.line : hamburgerStyles.second}/>
-            <div className={props.children === 'MENU' ? hamburgerStyles.line : hamburgerStyles.third}/>
+            <div className={children === 'MENU' ? hamburgerStyles.line : hamburgerStyles.first}/>
+            <div className={children === 'MENU' ? hamburgerStyles.line : hamburgerStyles.second}/>
+            <div className={children === 'MENU' ? hamburgerStyles.line : hamburgerStyles.third}/>
         </div>
-          {props.children}
+          {children}
       </button>
     </div>
   );

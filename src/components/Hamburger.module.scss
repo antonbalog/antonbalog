@@ -1,6 +1,4 @@
  .hamburger {
-     //  -webkit-animation: text-flicker-in-glow 4s linear both;
-     //  animation: text-flicker-in-glow 4s linear both;
  }
 
  button {
@@ -43,7 +41,6 @@
      background-color: #444;
      margin: 1rem;
      transition: 0.4s;
-     -webkit-transform: rotate(-45deg) translate(-1rem, 1rem);
      transform: rotate(-45deg) translate(-1rem, 1rem);
  }
 
@@ -62,6 +59,5 @@
      background-color: #444;
      margin: 1rem;
      transition: 0.4s;
-     -webkit-transform: rotate(45deg) translate(-1rem, -1rem);
      transform: rotate(45deg) translate(-1.1rem, -1.1rem);
  }

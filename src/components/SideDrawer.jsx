@@ -1,12 +1,10 @@
-import React from 'react';
-
 import sideDrawerStyles from './SideDrawer.module.scss';
 
-const SideDrawer = (props) => {
+const SideDrawer = ({ active, children }) => {
   return (
-    <div className={props.active ? sideDrawerStyles.openSideDrawer : sideDrawerStyles.closedSideDrawer}>
-        <h1>{props.children}</h1>
-    </div>  
+    <div className={active ? sideDrawerStyles.openSideDrawer : sideDrawerStyles.closedSideDrawer}>
+        <h1>{children}</h1>
+    </div>
   );
 }
 
