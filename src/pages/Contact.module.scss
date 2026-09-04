@@ -1,57 +1,63 @@
 .contact {
+    box-sizing: border-box;
+    height: 95vh;
     padding-top: 7.5rem;
-    min-height: calc(95vh - 7.5rem);
     display: flex;
     flex-direction: column;
     background: #444;
 }
 
+.channel {
+    min-height: 0;
+    display: flex;
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #fff;
+    text-decoration: none;
+    transition:
+        color 0.4s ease,
+        background-color 0.4s ease;
+}
+
+.icon {
+    display: block;
+    width: clamp(8rem, 20vw, 14rem);
+    height: auto;
+    max-height: 100%;
+    fill: currentColor;
+}
+
 .mail {
-    flex: 1 auto;
-    height: 22.5vh;
     background: #222;
-    color: #fff;
-    fill: #fff;
-    transition: 0.4s;
-}
 
-.mail:hover {
-    height: 22.5vh;
-    background: #fff;
-    color: #222;
-    fill: #222;
-    transition: 0.4s;
-}
-
-.twitter {
-    flex: 1 auto;
-    height: 22.5vh;
-    background: #1da1f2;
-    color: #fff;
-    fill: #fff;
-    transition: 0.4s;
-}
-
-.twitter:hover {
-    height: 22.5vh;
-    background: #fff;
-    color: #1da1f2;
-    fill: #1da1f2;
+    &:hover,
+    &:focus-visible {
+        color: #222;
+        background: #fff;
+    }
 }
 
 .linkedin {
-    flex: 1 auto;
-    height: 22.5vh;
-    background: #0077B5;
-    color: #fff;
-    fill: #fff;
-    transition: 0.4s;
+    background: #0077b5;
+
+    &:hover,
+    &:focus-visible {
+        color: #0077b5;
+        background: #fff;
+    }
 }
 
-.linkedin:hover {
-    height: 22.5vh;
-    background: #fff;
-    color: #0077B5;
-    fill: #0077B5;
-    transition: 0.4s;
+.channel:focus-visible {
+    position: relative;
+    z-index: 1;
+    outline: 0.25rem solid currentColor;
+    outline-offset: -0.5rem;
+}
+
+@media screen and (max-width: 750px) {
+    .icon {
+        width: clamp(7rem, 35vw, 10rem);
+    }
 }
