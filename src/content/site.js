@@ -1,7 +1,7 @@
 export const site = {
   name: 'Anton Balog',
   legalName: 'Anton Balog s. r. o.',
-  email: 'contact@antonbalog.com',
+  email: 'antonbalog@gmail.com',
   // Paste the Calendly link here once it exists. Until then the booking
   // button is hidden and only email is shown.
   calendlyUrl: '',
