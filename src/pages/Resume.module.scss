@@ -40,13 +40,13 @@
 .download {
     display: inline-block;
     margin-top: 2rem;
-    padding: 0.9rem 1.75rem;
+    padding: 0.8rem 1.25rem;
     border: 2px solid $color-ink;
     background: $color-ink;
     color: $color-paper;
-    font-family: $font-display;
-    font-size: 1.5rem;
-    letter-spacing: 0.06em;
+    font-size: 0.875rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
     text-decoration: none;
 
     &:hover,

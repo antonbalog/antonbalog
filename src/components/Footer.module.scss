@@ -2,14 +2,16 @@
 
 .footer {
     box-sizing: border-box;
-    padding: 2rem;
-    border-top: 1px solid $color-line;
+    padding: 1.5rem 2rem;
+    border-top: 2px solid $color-line;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    font-family: $font-display;
+    flex-wrap: wrap;
+    gap: 0.5rem 2rem;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
     letter-spacing: 0.04em;
-    color: $color-muted;
 
     p {
         margin: 0;

@@ -29,23 +29,32 @@ const CaseStudy = () => {
         ← All case studies
       </Link>
 
-      <header className={caseStyles.intro}>
-        <p className={caseStyles.eyebrow}>{study.industry}</p>
-        <h1 className={caseStyles.title}>{study.title}</h1>
-        {study.status && (
-          <p className={caseStyles.status}>{study.status}</p>
-        )}
+      <header className={caseStyles.header}>
+        <h1 className={caseStyles.detailTitle}>{study.title}</h1>
+        <p className={caseStyles.meta}>
+          <span>{study.industry}</span>
+          {study.status && <span>{study.status}</span>}
+        </p>
       </header>
 
-      <Section title="Context" paragraphs={study.context} />
-      <Section title="What I did" paragraphs={study.whatIDid} />
-      <Section title="What changed" paragraphs={study.whatChanged} />
+      <div className={caseStyles.columns}>
+        <div className={caseStyles.content}>
+          <p className={caseStyles.summary}>{study.summary}</p>
+          <Section title="Context" paragraphs={study.context} />
+          <Section title="What I did" paragraphs={study.whatIDid} />
+          <Section title="What changed" paragraphs={study.whatChanged} />
 
-      <p className={caseStyles.cta}>
-        <Link to="/contact" className={caseStyles.ctaLink}>
-          Working on something similar?
-        </Link>
-      </p>
+          <p className={caseStyles.cta}>
+            <Link to="/contact" className={caseStyles.ctaLink}>
+              Working on something similar?
+            </Link>
+          </p>
+        </div>
+
+        <aside className={caseStyles.panel} aria-hidden="true">
+          <span className={caseStyles.panelLabel}>{study.industry}</span>
+        </aside>
+      </div>
     </main>
   );
 };

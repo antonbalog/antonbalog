@@ -1,7 +1,14 @@
-import { Link } from 'react-router-dom';
-
+import StackedList from '../components/StackedList';
 import { caseStudies } from '../content/caseStudies';
 import caseStyles from './CaseStudies.module.scss';
+
+const listItems = caseStudies.map((study) => ({
+  id: study.slug,
+  title: study.title,
+  summary: study.summary,
+  label: study.industry,
+  to: `/case-studies/${study.slug}`,
+}));
 
 const CaseStudies = () => {
   return (
@@ -15,20 +22,7 @@ const CaseStudies = () => {
         </p>
       </header>
 
-      <ul className={caseStyles.list}>
-        {caseStudies.map((study) => (
-          <li key={study.slug} className={caseStyles.listItem}>
-            <Link
-              to={`/case-studies/${study.slug}`}
-              className={caseStyles.listLink}
-            >
-              <span className={caseStyles.industry}>{study.industry}</span>
-              <span className={caseStyles.listTitle}>{study.title}</span>
-              <span className={caseStyles.listSummary}>{study.summary}</span>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <StackedList items={listItems} ariaLabel="Case studies" />
     </main>
   );
 };

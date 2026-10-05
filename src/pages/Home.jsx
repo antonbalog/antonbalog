@@ -1,15 +1,23 @@
 import { Link } from 'react-router-dom';
 
+import StackedList from '../components/StackedList';
 import { services } from '../content/services';
 import { caseStudies } from '../content/caseStudies';
 import homeStyles from './Home.module.scss';
 
 const featuredCaseStudy = caseStudies[0];
 
+const serviceItems = services.map((service) => ({
+  id: service.id,
+  title: service.title,
+  summary: service.summary,
+  to: '/services',
+}));
+
 const Home = () => {
   return (
-    <main>
-      <section className={homeStyles.hero}>
+    <main className={homeStyles.page}>
+      <section className={homeStyles.intro}>
         <h1 className={homeStyles.headline}>
           I make software delivery faster, safer, and less fragile.
         </h1>
@@ -27,26 +35,15 @@ const Home = () => {
         </div>
       </section>
 
-      <section className={homeStyles.section} aria-labelledby="home-services">
-        <h2 id="home-services" className={homeStyles.sectionTitle}>
+      <section aria-labelledby="home-services" className={homeStyles.section}>
+        <h2 id="home-services" className={homeStyles.sectionLabel}>
           What I do
         </h2>
-        <ol className={homeStyles.serviceList}>
-          {services.map((service, index) => (
-            <li key={service.id} className={homeStyles.serviceItem}>
-              <span className={homeStyles.index}>
-                {String(index + 1).padStart(2, '0')}
-              </span>
-              <Link to="/services" className={homeStyles.serviceLink}>
-                {service.title}
-              </Link>
-            </li>
-          ))}
-        </ol>
+        <StackedList items={serviceItems} ariaLabel="Services" />
       </section>
 
-      <section className={homeStyles.section} aria-labelledby="home-case">
-        <h2 id="home-case" className={homeStyles.sectionTitle}>
+      <section aria-labelledby="home-case" className={homeStyles.section}>
+        <h2 id="home-case" className={homeStyles.sectionLabel}>
           Recent work
         </h2>
         <Link

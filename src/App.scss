@@ -9,30 +9,37 @@
 }
 
 @font-face {
-  font-family: 'D-DIN';
-  src:
-    url('/fonts/woff2/D-DIN.woff2') format('woff2'),
-    url('/fonts/woff/D-DIN.woff') format('woff');
+  font-family: 'Space Mono';
+  src: url('/fonts/space-mono/SpaceMono-Regular.woff2') format('woff2');
   font-style: normal;
   font-weight: 400;
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Space Mono';
+  src: url('/fonts/space-mono/SpaceMono-Bold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
 :root {
-  --color-ink: #111111;
-  --color-muted: #555555;
+  --color-ink: #000000;
   --color-paper: #ffffff;
-  --color-surface: #f4f4f4;
-  --color-line: #dddddd;
+  --color-muted: #6b6b6b;
+  --color-inactive: #e3e3e3;
   --font-display: 'Bebas Neue', Impact, sans-serif;
-  --font-body: 'D-DIN', Arial, Helvetica, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, Menlo, Consolas, monospace;
 }
 
 body {
   margin: 0;
   background: var(--color-paper);
   color: var(--color-ink);
-  font-family: var(--font-body);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -47,8 +54,14 @@ main {
   flex: 1;
 }
 
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
+
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid var(--color-ink);
+  outline: 2px solid var(--color-ink);
   outline-offset: 3px;
 }

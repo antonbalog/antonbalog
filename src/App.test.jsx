@@ -19,7 +19,7 @@ describe('home page', () => {
   it('links each service to the services page', () => {
     renderAt('/');
     expect(
-      screen.getByRole('link', { name: 'Platform takeover' })
+      screen.getByRole('link', { name: /platform takeover/i })
     ).toHaveAttribute('href', '/services');
   });
 });

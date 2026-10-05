@@ -4,14 +4,14 @@
 
 $breakpoint-md: 48rem;
 
-$color-ink: #111111;
-$color-muted: #555555;
+$color-ink: #000000;
 $color-paper: #ffffff;
-$color-surface: #f4f4f4;
-$color-line: #dddddd;
+$color-muted: #6b6b6b;
+$color-inactive: #e3e3e3;
+$color-line: #000000;
 
 $font-display: 'Bebas Neue', Impact, sans-serif;
-$font-body: 'D-DIN', Arial, Helvetica, sans-serif;
+$font-mono: 'Space Mono', ui-monospace, Menlo, Consolas, monospace;
 
-$content-width: 72rem;
-$space-section: clamp(4rem, 10vw, 8rem);
+$content-width: 80rem;
+$space-section: clamp(4rem, 9vw, 7rem);

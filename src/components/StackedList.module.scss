@@ -1,0 +1,107 @@
+@use '../styles/tokens' as *;
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.row {
+    position: relative;
+    border-top: 1px solid $color-inactive;
+
+    &:last-child {
+        border-bottom: 1px solid $color-inactive;
+    }
+}
+
+.link {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    color: $color-inactive;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+        color: $color-ink;
+    }
+}
+
+.number {
+    min-width: 2.5rem;
+    font-size: 0.875rem;
+    color: $color-muted;
+}
+
+.title {
+    font-family: $font-display;
+    font-size: clamp(3rem, 8.5vw, 7.5rem);
+    line-height: 0.95;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+}
+
+// Panel: black block with a white inset border, label bottom-right.
+.panel {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: min(26rem, 40%);
+    aspect-ratio: 4 / 3;
+    transform: translateY(-50%);
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 1.25rem;
+    background: $color-ink;
+    color: $color-paper;
+    outline: 2px solid $color-paper;
+    outline-offset: -10px;
+    pointer-events: none;
+}
+
+.row:hover .panel,
+.row:focus-within .panel {
+    display: flex;
+}
+
+.panelSummary {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.panelLabel {
+    align-self: flex-end;
+    font-family: $font-display;
+    font-size: 2rem;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+// Touch screens have no hover, so the summary is shown inline instead.
+.mobileSummary {
+    display: none;
+}
+
+@media screen and (max-width: $breakpoint-md) {
+    .link {
+        padding-bottom: 0.5rem;
+    }
+
+    .panel {
+        display: none !important;
+    }
+
+    .mobileSummary {
+        display: block;
+        margin: 0 0 1.25rem;
+        font-size: 0.9375rem;
+        line-height: 1.5;
+        color: $color-muted;
+    }
+}
