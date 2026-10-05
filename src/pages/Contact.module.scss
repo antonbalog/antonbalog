@@ -1,63 +1,102 @@
-.contact {
+@use '../styles/tokens' as *;
+
+.page {
     box-sizing: border-box;
-    height: 95vh;
-    padding-top: 7.5rem;
-    display: flex;
-    flex-direction: column;
-    background: #444;
+    max-width: $content-width;
+    margin: 0 auto;
+    padding: clamp(3rem, 8vw, 6rem) 2rem $space-section;
 }
 
-.channel {
-    min-height: 0;
+.intro {
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.eyebrow {
+    margin: 0;
+    font-family: $font-display;
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    color: $color-muted;
+    text-transform: uppercase;
+}
+
+.title {
+    margin: 0.5rem 0 0;
+    font-family: $font-display;
+    font-size: clamp(3.5rem, 9vw, 7rem);
+    font-weight: 400;
+    line-height: 0.95;
+    text-transform: uppercase;
+}
+
+.lead {
+    max-width: 40rem;
+    margin: 1.5rem 0 0;
+    font-size: clamp(1.125rem, 1.8vw, 1.5rem);
+    line-height: 1.45;
+    color: $color-muted;
+}
+
+.actions {
     display: flex;
-    flex: 1 1 0;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    color: #fff;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.primary,
+.secondary {
+    padding: 0.9rem 1.75rem;
+    border: 2px solid $color-ink;
+    font-family: $font-display;
+    font-size: 1.5rem;
+    letter-spacing: 0.06em;
     text-decoration: none;
-    transition:
-        color 0.4s ease,
-        background-color 0.4s ease;
 }
 
-.icon {
-    display: block;
-    width: clamp(8rem, 20vw, 14rem);
-    height: auto;
-    max-height: 100%;
-    fill: currentColor;
-}
-
-.mail {
-    background: #222;
+.primary {
+    background: $color-ink;
+    color: $color-paper;
 
     &:hover,
     &:focus-visible {
-        color: #222;
-        background: #fff;
+        background: $color-paper;
+        color: $color-ink;
     }
 }
 
-.linkedin {
-    background: #0077b5;
+.secondary {
+    background: transparent;
+    color: $color-ink;
 
     &:hover,
     &:focus-visible {
-        color: #0077b5;
-        background: #fff;
+        background: $color-ink;
+        color: $color-paper;
     }
 }
 
-.channel:focus-visible {
-    position: relative;
-    z-index: 1;
-    outline: 0.25rem solid currentColor;
-    outline-offset: -0.5rem;
+.links {
+    margin: 3rem 0 0;
+    padding: 0;
+    list-style: none;
 }
 
-@media screen and (max-width: 750px) {
-    .icon {
-        width: clamp(7rem, 35vw, 10rem);
+.textLink {
+    font-family: $font-display;
+    font-size: 1.5rem;
+    letter-spacing: 0.06em;
+    color: $color-ink;
+    text-underline-offset: 0.3em;
+
+    &:hover,
+    &:focus-visible {
+        color: $color-muted;
+    }
+}
+
+@media screen and (max-width: $breakpoint-md) {
+    .page {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
     }
 }

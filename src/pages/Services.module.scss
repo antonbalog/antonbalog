@@ -1,0 +1,108 @@
+@use '../styles/tokens' as *;
+
+.page {
+    box-sizing: border-box;
+    max-width: $content-width;
+    margin: 0 auto;
+    padding: clamp(3rem, 8vw, 6rem) 2rem $space-section;
+}
+
+.intro {
+    margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.eyebrow {
+    margin: 0;
+    font-family: $font-display;
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    color: $color-muted;
+    text-transform: uppercase;
+}
+
+.title {
+    margin: 0.5rem 0 0;
+    font-family: $font-display;
+    font-size: clamp(3.5rem, 9vw, 7rem);
+    font-weight: 400;
+    line-height: 0.95;
+    text-transform: uppercase;
+}
+
+.lead {
+    max-width: 40rem;
+    margin: 1.5rem 0 0;
+    font-size: clamp(1.125rem, 1.8vw, 1.5rem);
+    line-height: 1.45;
+    color: $color-muted;
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 2px solid $color-ink;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    gap: 1.5rem;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid $color-line;
+}
+
+.index {
+    font-family: $font-display;
+    font-size: 2rem;
+    color: $color-muted;
+}
+
+.itemTitle {
+    margin: 0;
+    font-family: $font-display;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.05;
+}
+
+.itemSummary {
+    max-width: 44rem;
+    margin: 1rem 0 0;
+    font-size: 1.125rem;
+    line-height: 1.55;
+}
+
+.cta {
+    margin: 4rem 0 0;
+}
+
+.ctaLink {
+    display: inline-block;
+    padding: 0.9rem 1.75rem;
+    border: 2px solid $color-ink;
+    background: $color-ink;
+    color: $color-paper;
+    font-family: $font-display;
+    font-size: 1.5rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+        background: $color-paper;
+        color: $color-ink;
+    }
+}
+
+@media screen and (max-width: $breakpoint-md) {
+    .page {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .item {
+        grid-template-columns: 3rem 1fr;
+        gap: 1rem;
+    }
+}

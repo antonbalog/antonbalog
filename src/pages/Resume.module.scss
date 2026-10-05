@@ -1,0 +1,172 @@
+@use '../styles/tokens' as *;
+
+.page {
+    box-sizing: border-box;
+    max-width: $content-width;
+    margin: 0 auto;
+    padding: clamp(3rem, 8vw, 6rem) 2rem $space-section;
+}
+
+.intro {
+    margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.eyebrow {
+    margin: 0;
+    font-family: $font-display;
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    color: $color-muted;
+    text-transform: uppercase;
+}
+
+.title {
+    margin: 0.5rem 0 0;
+    font-family: $font-display;
+    font-size: clamp(3.5rem, 9vw, 7rem);
+    font-weight: 400;
+    line-height: 0.95;
+    text-transform: uppercase;
+}
+
+.lead {
+    max-width: 48rem;
+    margin: 1.5rem 0 0;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: $color-muted;
+}
+
+.download {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.9rem 1.75rem;
+    border: 2px solid $color-ink;
+    background: $color-ink;
+    color: $color-paper;
+    font-family: $font-display;
+    font-size: 1.5rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+        background: $color-paper;
+        color: $color-ink;
+    }
+}
+
+.section {
+    margin-bottom: 4rem;
+}
+
+.heading {
+    margin: 0 0 2rem;
+    padding-top: 1rem;
+    border-top: 2px solid $color-ink;
+    font-family: $font-display;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.job {
+    display: grid;
+    gap: 0.75rem;
+    padding-bottom: 2.5rem;
+}
+
+.jobHeader {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem 2rem;
+}
+
+.jobRole {
+    margin: 0;
+    font-family: $font-display;
+    font-size: 1.75rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+.jobMeta {
+    margin: 0;
+    font-size: 1rem;
+    color: $color-muted;
+}
+
+.note {
+    margin: 0;
+    font-style: italic;
+    color: $color-muted;
+}
+
+.highlights {
+    margin: 0;
+    padding-left: 1.25rem;
+    line-height: 1.6;
+
+    li + li {
+        margin-top: 0.5rem;
+    }
+}
+
+.skills {
+    margin: 0;
+}
+
+.skillRow {
+    display: grid;
+    grid-template-columns: 14rem 1fr;
+    gap: 1rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid $color-line;
+}
+
+.skillArea {
+    font-family: $font-display;
+    font-size: 1.25rem;
+    letter-spacing: 0.04em;
+}
+
+.skillItems {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.twoColumn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.entry {
+    margin-bottom: 1.5rem;
+}
+
+.entryTitle {
+    margin: 0 0 0.25rem;
+    font-weight: bold;
+}
+
+.plainList {
+    margin: 0;
+    padding-left: 1.25rem;
+    line-height: 1.6;
+}
+
+@media screen and (max-width: $breakpoint-md) {
+    .page {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .skillRow,
+    .twoColumn {
+        grid-template-columns: 1fr;
+    }
+}

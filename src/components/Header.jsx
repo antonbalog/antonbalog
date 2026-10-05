@@ -1,62 +1,59 @@
-import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
-import Hamburger from './Hamburger';
+import { site } from '../content/site';
 import headerStyles from './Header.module.scss';
 
 const navigationItems = [
-  {
-    label: 'HOME',
-    message: 'BACK HOME',
-    path: '/',
-    end: true,
-  },
-  {
-    label: 'WORK',
-    message: 'SELECTED WORK',
-    path: '/work',
-  },
-  {
-    label: 'CONTACT',
-    message: 'GET IN TOUCH',
-    path: '/contact',
-  },
+  { label: 'Services', path: '/services' },
+  { label: 'Case studies', path: '/case-studies' },
+  { label: 'Resume', path: '/resume' },
+  { label: 'Contact', path: '/contact' },
 ];
 
-const Header = ({
-  active,
-  activationHandler,
-  hoverHandler,
-  labelHandler,
-}) => {
-  const navItemClass = ({ isActive }) =>
-    isActive
-      ? `${headerStyles.navItem} ${headerStyles.active}`
-      : headerStyles.navItem;
+const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const resetMessage = () => {
-    hoverHandler('ANTON BALOG');
-  };
+  const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className={active ? headerStyles.dark : headerStyles.default}>
+    <header className={headerStyles.header}>
+      <div className={headerStyles.bar}>
+        <Link to="/" className={headerStyles.brand} onClick={closeMenu}>
+          {site.name}
+        </Link>
+
+        <button
+          type="button"
+          className={headerStyles.menuButton}
+          aria-expanded={menuOpen}
+          aria-controls="site-navigation"
+          onClick={() => setMenuOpen((isOpen) => !isOpen)}
+        >
+          {menuOpen ? 'Close' : 'Menu'}
+        </button>
+      </div>
+
       <nav
-        className={active ? headerStyles.moveDown : headerStyles.moveUp}
+        id="site-navigation"
         aria-label="Main navigation"
+        className={
+          menuOpen
+            ? `${headerStyles.nav} ${headerStyles.navOpen}`
+            : headerStyles.nav
+        }
       >
         <ul className={headerStyles.navList}>
-          {navigationItems.map(({ label, message, path, end }) => (
-            <li
-              key={path}
-              onMouseEnter={() => hoverHandler(message)}
-              onMouseLeave={resetMessage}
-              onFocus={() => hoverHandler(message)}
-              onBlur={resetMessage}
-            >
+          {navigationItems.map(({ label, path }) => (
+            <li key={path}>
               <NavLink
                 to={path}
-                end={end}
-                className={navItemClass}
-                onClick={activationHandler}
+                onClick={closeMenu}
+                className={({ isActive }) =>
+                  isActive
+                    ? `${headerStyles.link} ${headerStyles.active}`
+                    : headerStyles.link
+                }
               >
                 {label}
               </NavLink>
@@ -64,12 +61,8 @@ const Header = ({
           ))}
         </ul>
       </nav>
-
-      <Hamburger clickHandler={activationHandler}>
-        {labelHandler}
-      </Hamburger>
     </header>
   );
 };
 
-export default Header;  
+export default Header;

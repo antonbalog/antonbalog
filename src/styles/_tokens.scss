@@ -1,0 +1,17 @@
+// Shared design tokens. SCSS variables are used for media queries (CSS
+// variables can't be used inside @media). The matching CSS custom properties
+// live in App.scss.
+
+$breakpoint-md: 48rem;
+
+$color-ink: #111111;
+$color-muted: #555555;
+$color-paper: #ffffff;
+$color-surface: #f4f4f4;
+$color-line: #dddddd;
+
+$font-display: 'Bebas Neue', Impact, sans-serif;
+$font-body: 'D-DIN', Arial, Helvetica, sans-serif;
+
+$content-width: 72rem;
+$space-section: clamp(4rem, 10vw, 8rem);

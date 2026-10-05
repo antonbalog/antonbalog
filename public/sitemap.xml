@@ -4,7 +4,19 @@
     <loc>https://antonbalog.com/</loc>
   </url>
   <url>
-    <loc>https://antonbalog.com/work</loc>
+    <loc>https://antonbalog.com/services</loc>
+  </url>
+  <url>
+    <loc>https://antonbalog.com/case-studies</loc>
+  </url>
+  <url>
+    <loc>https://antonbalog.com/case-studies/platform-takeover</loc>
+  </url>
+  <url>
+    <loc>https://antonbalog.com/case-studies/pipeline-speed-up</loc>
+  </url>
+  <url>
+    <loc>https://antonbalog.com/resume</loc>
   </url>
   <url>
     <loc>https://antonbalog.com/contact</loc>

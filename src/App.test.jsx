@@ -3,45 +3,96 @@ import { render, screen, fireEvent } from '@testing-library/react';
 
 import App from './App';
 
-describe('App', () => {
-  it('renders the home page at /', () => {
-    window.history.pushState({}, '', '/');
-    render(<App />);
+const renderAt = (path) => {
+  window.history.pushState({}, '', path);
+  render(<App />);
+};
+
+describe('home page', () => {
+  it('shows the hero headline at /', () => {
+    renderAt('/');
     expect(
-      screen.getByText(/IT consultant/i)
+      screen.getByRole('heading', { level: 1, name: /software delivery/i })
     ).toBeInTheDocument();
   });
 
-  it('navigates to the Work page via the nav link', () => {
-    window.history.pushState({}, '', '/');
-    render(<App />);
-    fireEvent.click(screen.getByRole('link', { name: 'WORK' }));
+  it('links each service to the services page', () => {
+    renderAt('/');
     expect(
-      screen.getByRole('heading', { name: /devops consultant/i })
+      screen.getByRole('link', { name: 'Platform takeover' })
+    ).toHaveAttribute('href', '/services');
+  });
+});
+
+describe('navigation', () => {
+  it('goes to the services page from the nav', () => {
+    renderAt('/');
+    fireEvent.click(screen.getByRole('link', { name: 'Services' }));
+    expect(
+      screen.getByRole('heading', { name: 'What I do for companies' })
     ).toBeInTheDocument();
   });
 
-  it('navigates to the Contact page via the nav link', () => {
-    window.history.pushState({}, '', '/');
-    render(<App />);
-    fireEvent.click(screen.getByRole('link', { name: 'CONTACT' }));
+  it('goes to the case studies list from the nav', () => {
+    renderAt('/');
+    fireEvent.click(screen.getByRole('link', { name: 'Case studies' }));
     expect(
-      screen.getByRole('link', { name: /send anton an email/i })
+      screen.getByRole('heading', { name: 'Work I can talk about' })
     ).toBeInTheDocument();
   });
 
-  it('shows the hamburger menu label and toggles it', () => {
-    window.history.pushState({}, '', '/');
-    render(<App />);
-    const toggle = screen.getByRole('button', { name: /menu/i });
-    expect(toggle).toBeInTheDocument();
+  it('goes to the contact page from the nav', () => {
+    renderAt('/');
+    fireEvent.click(screen.getByRole('link', { name: 'Contact' }));
+    expect(
+      screen.getByRole('heading', { name: /let's talk about your platform/i })
+    ).toBeInTheDocument();
+  });
+
+  it('toggles the mobile menu button', () => {
+    renderAt('/');
+    const toggle = screen.getByRole('button', { name: 'Menu' });
+    expect(toggle).toHaveAttribute('aria-expanded', 'false');
     fireEvent.click(toggle);
-    expect(screen.getByRole('button', { name: /close/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Close' })).toHaveAttribute(
+      'aria-expanded',
+      'true'
+    );
+  });
+});
+
+describe('pages', () => {
+  it('opens a case study from its slug', () => {
+    renderAt('/case-studies/platform-takeover');
+    expect(
+      screen.getByRole('heading', {
+        level: 1,
+        name: 'Taking over a platform after its owner left',
+      })
+    ).toBeInTheDocument();
   });
 
-  it('renders a not-found page for an unknown route', () => {
-    window.history.pushState({}, '', '/this-route-does-not-exist');
-    render(<App />);
+  it('shows the 404 page for an unknown case study', () => {
+    renderAt('/case-studies/does-not-exist');
+    expect(screen.getByRole('heading', { name: '404' })).toBeInTheDocument();
+  });
+
+  it('offers a CV download on the resume page', async () => {
+    renderAt('/resume');
+    expect(
+      await screen.findByRole('link', { name: 'Download CV (PDF)' })
+    ).toHaveAttribute('href', '/Anton-Balog-CV.pdf');
+  });
+
+  it('redirects the old /work URL to services', () => {
+    renderAt('/work');
+    expect(
+      screen.getByRole('heading', { name: 'What I do for companies' })
+    ).toBeInTheDocument();
+  });
+
+  it('shows the 404 page for an unknown route', () => {
+    renderAt('/this-route-does-not-exist');
     expect(screen.getByRole('heading', { name: '404' })).toBeInTheDocument();
   });
 });

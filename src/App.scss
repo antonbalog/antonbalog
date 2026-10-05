@@ -8,7 +8,6 @@
   font-display: swap;
 }
 
-
 @font-face {
   font-family: 'D-DIN';
   src:
@@ -19,6 +18,37 @@
   font-display: swap;
 }
 
+:root {
+  --color-ink: #111111;
+  --color-muted: #555555;
+  --color-paper: #ffffff;
+  --color-surface: #f4f4f4;
+  --color-line: #dddddd;
+  --font-display: 'Bebas Neue', Impact, sans-serif;
+  --font-body: 'D-DIN', Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .App {
-  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-ink);
+  outline-offset: 3px;
 }
